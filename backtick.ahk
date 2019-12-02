@@ -14,44 +14,64 @@ return
 SendInput, '
 return
 
+; US layout style curly bracket insertion
+å::
+SendRaw, {
+return
 
-; Emulate macOS command key pasting, file save, tab open and close
+¨::
+SendRaw, }
+return
+
+
+;; Emulate macOS command key with Alt
+
+; copy
 !c::
 Send ^c
 return
 
+; select all
 !a::
 Send ^a
 return
 
+; paste
 !v::
 Send ^v
 return
 
+; cut
 !x::
 Send ^x
 return
 
+; save
 !s::
 Send ^s
 return
 
+; new tab
 !t::
 Send ^t
 return
 
+; close tab
 !w::
 Send ^w
 return
 
+; new window
 !n::
 Send ^n
 return
 
+; undo
 !z::
 Send ^z
 return
 
+; search
 !f::
 Send ^f
 return
@@ -105,16 +125,6 @@ return
 !+^l::
 Send +^{Right}
 return
-
-; US layout style curly bracket insertion
-å::
-SendRaw, {
-return
-
-¨::
-SendRaw, }
-return
-
 
 ; Spectacle style window tiling
 
