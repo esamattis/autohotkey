@@ -113,6 +113,22 @@ return
 Send {Left}
 return
 
+!ö::
+Send {Home}
+return
+
+!Ö::
+Send +{Home}
+return
+
+!ä::
+Send {End}
+return
+
+!Ä::
+Send +{End}
+return
+
 !+h::
 Send +{Left}
 return
