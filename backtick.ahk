@@ -3,6 +3,29 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+#SingleInstance force
+
+#n::
+    ; save current mouse pos
+    MouseGetPos, xpos, ypos
+    ; open the settings window
+    run ms-settings:nightlight
+    ; added slight delay before sending click
+    ; without it, it did not always work
+    Sleep, 1000
+    ; on my system, the toggle button is at this location
+    ; you might need to verify this using WindowSpy
+    ; MouseClick,, 140, 425,,Relative
+    MouseClick,, 130, 350,,Relative
+    MouseMove, %xpos%, %ypos%
+    Sleep, 1000
+
+    ; close the settings window
+    Send, {Alt Down}{F4}{Alt Up}
+    ; restore the mouse position
+	return
+
+
 ; Send backtick
 §::
 SendInput, ``
@@ -14,13 +37,21 @@ return
 SendInput, '
 return
 
-; US layout style curly bracket insertion
-å::
+; Easier curlies
+!8::
 SendRaw, {
 return
 
-¨::
+!9::
 SendRaw, }
+return
+
+#8::
+SendRaw, [
+return
+
+#9::
+SendRaw, ]
 return
 
 
