@@ -48,6 +48,63 @@ return
 Send ^n
 return
 
+!z::
+Send ^z
+return
+
+!f::
+Send ^f
+return
+
+; Vim move
+
+!h::
+Send {Left}
+return
+
+!+h::
+Send +{Left}
+return
+
+!^h::
+Send ^{Left}
+return
+
+!+^h::
+Send +^{Left}
+return
+
+!j::
+Send {Down}
+return
+
+!+j::
+Send +{Down}
+return
+
+!k::
+Send {Up}
+return
+
+!+k::
+Send +{Up}
+return
+
+!l::
+Send {Right}
+return
+
+!+l::
+Send +{Right}
+return
+
+!^l::
+Send ^{Right}
+return
+
+!+^l::
+Send +^{Right}
+return
 
 ; US layout style curly bracket insertion
 å::
@@ -103,20 +160,20 @@ MoveIt(Q)
   ; Get the windows pos
 	WinGetPos,X,Y,W,H,A,,,
 	WinGet,M,MinMax,A
-  
+
   ; Calculate the top center edge
   CX := X + W/2
   CY := Y + 20
-  
-;  MsgBox, X: %X% Y: %Y% W: %W% H: %H% CX: %CX% CY: %CY% 
- 
+
+;  MsgBox, X: %X% Y: %Y% W: %W% H: %H% CX: %CX% CY: %CY%
+
   SysGet, Count, MonitorCount
- 
+
   num = 1
   Loop, %Count%
   {
     SysGet, Mon, MonitorWorkArea, %num%
- 
+
     if( CX >= MonLeft && CX <= MonRight && CY >= MonTop && CY <= MonBottom )
     {
 		MW := (MonRight - MonLeft)
@@ -125,10 +182,10 @@ MoveIt(Q)
 		MHH := (MH / 2)
 		MMX := MonLeft + MHW
 		MMY := MonTop + MHH
-	
+
 		if( M != 0 )
 			WinRestore,A
-		
+
 		if( Q == 1 )
 			WinMove,A,,MonLeft,MMY,MHW,MHH
 		if( Q == 2 )
@@ -154,10 +211,9 @@ MoveIt(Q)
 			WinMove,A,,MMX,MonTop,MHW,MHH
         return
     }
- 
+
     num += 1
   }
-  
+
 return
 }
- 
