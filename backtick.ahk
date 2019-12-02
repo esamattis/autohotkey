@@ -44,6 +44,10 @@ return
 Send ^w
 return
 
+!n::
+Send ^n
+return
+
 
 ; US layout style curly bracket insertion
 å::
