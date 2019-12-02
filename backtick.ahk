@@ -3,17 +3,49 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-
+; Send backtick
 §::
 SendInput, ``
 SendInput {Space}
 return
 
+; And single quote
 ½::
 SendInput, '
 return
 
 
+; Emulate macOS command key pasting, file save, tab open and close
+!c::
+Send ^c
+return
+
+!a::
+Send ^a
+return
+
+!v::
+Send ^v
+return
+
+!x::
+Send ^x
+return
+
+!s::
+Send ^s
+return
+
+!t::
+Send ^t
+return
+
+!w::
+Send ^w
+return
+
+
+; US layout style curly bracket insertion
 å::
 SendRaw, {
 return
@@ -21,6 +53,9 @@ return
 ¨::
 SendRaw, }
 return
+
+
+; Spectacle style window tiling
 
 #z::
 MoveIt(1)
@@ -58,6 +93,7 @@ return
 MoveIt(9)
 return
 
+; https://autohotkey.com/board/topic/108780-move-window-to-half-quarter-of-current-monitor/
 MoveIt(Q)
 {
   ; Get the windows pos
