@@ -109,26 +109,12 @@ return
 
 ; Vim move
 
+; alt h
 !h::
 Send {Left}
 return
 
-!ö::
-Send {Home}
-return
-
-!Ö::
-Send +{Home}
-return
-
-!ä::
-Send {End}
-return
-
-!Ä::
-Send +{End}
-return
-
+; alt shift h
 !+h::
 Send +{Left}
 return
@@ -137,6 +123,7 @@ return
 Send ^{Left}
 return
 
+; alt shift control h
 !+^h::
 Send +^{Left}
 return
@@ -171,6 +158,22 @@ return
 
 !+^l::
 Send +^{Right}
+return
+
+!ö::
+Send {Home}
+return
+
+!Ö::
+Send +{Home}
+return
+
+!ä::
+Send {End}
+return
+
+!Ä::
+Send +{End}
 return
 
 ; Spectacle style window tiling
