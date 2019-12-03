@@ -107,72 +107,85 @@ return
 Send ^f
 return
 
+
+
+
+
+
+
+
+
+
+
+
 ; Vim move
 
+Alt::return
+
 ; alt h
-!h::
+$!h::
 Send {Left}
 return
 
 ; alt shift h
-!+h::
+$!+h::
 Send +{Left}
 return
 
-!^h::
+$!^h::
 Send ^{Left}
 return
 
 ; alt shift control h
-!+^h::
+$!+^h::
 Send +^{Left}
 return
 
-!j::
+$!j::
 Send {Down}
 return
 
-!+j::
+$!+j::
 Send +{Down}
 return
 
-!k::
+$!k::
 Send {Up}
 return
 
-!+k::
+$!+k::
 Send +{Up}
 return
 
-!l::
+$!l::
 Send {Right}
 return
 
-!+l::
+$!+l::
 Send +{Right}
 return
 
-!^l::
+$!^l::
 Send ^{Right}
 return
 
-!+^l::
+$!+^l::
 Send +^{Right}
 return
 
-!ö::
+$!ö::
 Send {Home}
 return
 
-!Ö::
+$!Ö::
 Send +{Home}
 return
 
-!ä::
+$!ä::
 Send {End}
 return
 
-!Ä::
+$!Ä::
 Send +{End}
 return
 
