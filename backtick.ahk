@@ -178,6 +178,16 @@ return
 
 ; Spectacle style window tiling
 
+; win+shift+right Send to right screen
+#+d::
+Send #+{Right}
+return
+
+; Send to left screen
+#+a::
+Send #+{Left}
+return
+
 #z::
 MoveIt(1)
 return
