@@ -114,6 +114,10 @@ Send ^f
 return
 
 
+; Close app
+!q::
+Send !{F4}
+return
 
 
 
