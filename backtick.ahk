@@ -5,61 +5,58 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 #SingleInstance force
 
-#n::
-    ; save current mouse pos
-    MouseGetPos, xpos, ypos
-    ; open the settings window
-    run ms-settings:nightlight
-    ; added slight delay before sending click
-    ; without it, it did not always work
-    Sleep, 1000
-    ; on my system, the toggle button is at this location
-    ; you might need to verify this using WindowSpy
-    ; MouseClick,, 140, 425,,Relative
-    MouseClick,, 130, 350,,Relative
-    MouseMove, %xpos%, %ypos%
-    Sleep, 1000
 
-    ; close the settings window
-    Send, {Alt Down}{F4}{Alt Up}
-    ; restore the mouse position
-	return
-
-
-; Send backtick
+; #########################
+; Easier backtick insertion
+; #########################
 §::
 SendInput, ``
 SendInput {Space}
 return
-
 ; And single quote
 ½::
 SendInput, '
 return
 
+
+
+
+; ##############
 ; Easier curlies
+; ##############
+
+; alt+8
 !8::
 SendRaw, {
 return
 
+; alt+9
 !9::
 SendRaw, }
 return
 
+; win+8
 #8::
 SendRaw, [
 return
 
+; win+9
 #9::
 SendRaw, ]
 return
 
 
-;; Emulate macOS command key with Alt
+
+
+
+; ##################################
+; Emulate macOS command key with Alt
+; ##################################
 
 ; copy
 !c::
 if WinActive("ahk_class mintty")
+	; special handling for git-bash
 	Send ^{Insert}
 else
 	Send ^c
@@ -122,13 +119,9 @@ return
 
 
 
-
-
-
-
-
-
-; Vim move
+; ######################
+; Vim emulation with Alt
+; ######################
 
 Alt::return
 
@@ -199,9 +192,40 @@ $!Ä::
 Send +{End}
 return
 
-; Spectacle style window tiling
 
-; win+shift+right Send to right screen
+
+
+; #################
+; Toggle night mode
+; #################
+#n::
+    ; save current mouse pos
+    MouseGetPos, xpos, ypos
+    ; open the settings window
+    run ms-settings:nightlight
+    ; added slight delay before sending click
+    ; without it, it did not always work
+    Sleep, 1000
+    ; on my system, the toggle button is at this location
+    ; you might need to verify this using WindowSpy
+    ; MouseClick,, 140, 425,,Relative
+    MouseClick,, 130, 350,,Relative
+    MouseMove, %xpos%, %ypos%
+    Sleep, 1000
+
+    ; close the settings window
+    Send, {Alt Down}{F4}{Alt Up}
+    ; restore the mouse position
+	return
+
+
+
+
+; #############################
+; Spectacle style window tiling
+; #############################
+
+; Win+shift+d --> win+shift+right eg. Send to right screen
 #+d::
 Send #+{Right}
 return
