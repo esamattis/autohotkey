@@ -59,7 +59,10 @@ return
 
 ; copy
 !c::
-Send ^c
+if WinActive("ahk_class mintty")
+	Send ^{Insert}
+else
+	Send ^c
 return
 
 ; select all
@@ -69,7 +72,10 @@ return
 
 ; paste
 !v::
-Send ^v
+if WinActive("ahk_class mintty")
+	Send +{Insert}
+else
+	Send ^v
 return
 
 ; cut
