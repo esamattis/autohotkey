@@ -21,6 +21,82 @@ return
 
 
 
+; ######################
+; Vim emulation with Alt
+; ######################
+
+Alt::return
+
+; alt h
+$!h::
+Send {Left}
+return
+
+; alt shift h
+$!+h::
+Send +{Left}
+return
+
+$!^h::
+Send ^{Left}
+return
+
+; alt shift control h
+$!+^h::
+Send +^{Left}
+return
+
+$!j::
+Send {Down}
+return
+
+$!+j::
+Send +{Down}
+return
+
+$!k::
+Send {Up}
+return
+
+$!+k::
+Send +{Up}
+return
+
+$!l::
+Send {Right}
+return
+
+$!+l::
+Send +{Right}
+return
+
+$!^l::
+Send ^{Right}
+return
+
+$!+^l::
+Send +^{Right}
+return
+
+$!ö::
+Send {Home}
+return
+
+$!Ö::
+Send +{Home}
+return
+
+$!ä::
+Send {End}
+return
+
+$!Ä::
+Send +{End}
+return
+
+
+
+
 ; ##############
 ; Easier curlies
 ; ##############
@@ -117,80 +193,6 @@ Send !{F4}
 return
 
 
-
-
-; ######################
-; Vim emulation with Alt
-; ######################
-
-Alt::return
-
-; alt h
-$!h::
-Send {Left}
-return
-
-; alt shift h
-$!+h::
-Send +{Left}
-return
-
-$!^h::
-Send ^{Left}
-return
-
-; alt shift control h
-$!+^h::
-Send +^{Left}
-return
-
-$!j::
-Send {Down}
-return
-
-$!+j::
-Send +{Down}
-return
-
-$!k::
-Send {Up}
-return
-
-$!+k::
-Send +{Up}
-return
-
-$!l::
-Send {Right}
-return
-
-$!+l::
-Send +{Right}
-return
-
-$!^l::
-Send ^{Right}
-return
-
-$!+^l::
-Send +^{Right}
-return
-
-$!ö::
-Send {Home}
-return
-
-$!Ö::
-Send +{Home}
-return
-
-$!ä::
-Send {End}
-return
-
-$!Ä::
-Send +{End}
-return
 
 
 
