@@ -25,6 +25,7 @@ return
 ; Vim emulation with Alt
 ; ######################
 
+; Disable standalone Alt behaviour eg. open the menu thing
 Alt::return
 
 ; alt h
@@ -32,15 +33,18 @@ $!h::
 Send {Left}
 return
 
+; select text
 ; alt shift h
 $!+h::
 Send +{Left}
 return
 
+; Jump words control
 $!^h::
 Send ^{Left}
 return
 
+; Jump words and select
 ; alt shift control h
 $!+^h::
 Send +^{Left}
