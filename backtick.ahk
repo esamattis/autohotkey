@@ -9,15 +9,25 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ; #########################
 ; Easier backtick insertion
 ; #########################
-§::
+
+´::
 SendInput, ``
-SendInput {Space}
+Send {Space}
+return
+
+
+; ##############
+; Easier curlies
+; ##############
+
+§::
+SendRaw, {
+
 return
 ; And single quote
 ½::
-SendInput, '
+SendRaw, }
 return
-
 
 
 
@@ -101,29 +111,6 @@ return
 
 
 
-; ##############
-; Easier curlies
-; ##############
-
-; alt+8
-!8::
-SendRaw, {
-return
-
-; alt+9
-!9::
-SendRaw, }
-return
-
-; win+8
-#8::
-SendRaw, [
-return
-
-; win+9
-#9::
-SendRaw, ]
-return
 
 
 
