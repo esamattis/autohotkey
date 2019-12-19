@@ -134,7 +134,7 @@ return
 ; ##################################
 
 ; copy
-!c::
+$!c::
 if WinActive("ahk_class mintty")
 	; special handling for git-bash
 	Send ^{Insert}
@@ -143,12 +143,12 @@ else
 return
 
 ; select all
-!a::
+$!a::
 Send ^a
 return
 
 ; paste
-!v::
+$!v::
 if WinActive("ahk_class mintty")
 	Send +{Insert}
 else
@@ -156,43 +156,48 @@ else
 return
 
 ; cut
-!x::
+$!x::
 Send ^x
 return
 
 ; save
-!s::
+$!s::
 Send ^s
 return
 
 ; new tab
-!t::
+$!t::
 Send ^t
 return
 
 ; close tab
-!w::
+$!w::
 Send ^w
 return
 
+; reload
+$!r::
+Send ^r
+return
+
 ; new window
-!n::
+$!n::
 Send ^n
 return
 
 ; undo
-!z::
+$!z::
 Send ^z
 return
 
 ; search
-!f::
+$!f::
 Send ^f
 return
 
 
 ; Close app
-!q::
+$!q::
 Send !{F4}
 return
 
