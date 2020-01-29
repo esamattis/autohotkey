@@ -43,6 +43,16 @@ $!h::
 Send {Left}
 return
 
+; alt ctrl j
+$!^j::
+Send {PgDn}
+return
+
+; alt ctrl k
+$!^k::
+Send {PgUp}
+return
+
 ; select text
 ; alt shift h
 $!+h::
