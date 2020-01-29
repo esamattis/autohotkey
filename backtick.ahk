@@ -135,6 +135,8 @@ $!c::
 if WinActive("ahk_class mintty")
 	; special handling for git-bash
 	Send ^{Insert}
+else if WinActive("ahk_exe WindowsTerminal.exe")
+	MouseClick, Right
 else
 	Send ^c
 return
@@ -148,6 +150,8 @@ return
 $!v::
 if WinActive("ahk_class mintty")
 	Send +{Insert}
+else if WinActive("ahk_exe WindowsTerminal.exe")
+	MouseClick, Right
 else
 	Send ^v
 return
